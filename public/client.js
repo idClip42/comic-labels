@@ -52,8 +52,14 @@ const OnLoadData = function (labelsSet) {
 
         let yearsEl = newTab.getElementsByClassName("years")[0];
         if (labelData.years) {
+
+        if(labelData.years.start === labelData.years.end){
+            yearsEl.getElementsByClassName("start")[0].parentElement.innerHTML = `(${labelData.years.start})`
+        }
+        else {
             yearsEl.getElementsByClassName("start")[0].innerHTML = labelData.years.start;
             yearsEl.getElementsByClassName("end")[0].innerHTML = labelData.years.end != null ? labelData.years.end : "____";
+        }
         } else {
             yearsEl.parentElement.removeChild(yearsEl);
         }
