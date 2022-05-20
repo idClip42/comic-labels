@@ -26,7 +26,9 @@ const OnLoadData = function (labelsSet) {
     labelsSet.forEach(labelData => {
 
         // Skip the weird ones
-        if(labelData.issues.start < 0) return;
+        if(typeof(labelData.issues.start) !== "number") return;
+        if(labelData.issues.start < 1) return;
+        if(labelData.issues.start > 999) return;
 
         let newTab = template.cloneNode(true);
         newTab.getElementsByClassName("run-name")[0].innerHTML = labelData["run-name"];
