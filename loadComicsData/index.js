@@ -46,6 +46,8 @@ const LoadComicRun = async function(url, getIndivPageData){
         url
     )
 
+    console.log(`Loading "${volumeName}"...`);
+
     const galleryItems = dom.window.document.getElementsByClassName(CONFIG.galleryItemClass);
         
     for(let item of galleryItems){
