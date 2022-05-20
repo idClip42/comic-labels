@@ -65,5 +65,28 @@ const OnLoadData = function (labelsSet) {
         } else {
             yearsEl.parentElement.removeChild(yearsEl);
         }
+
+        const writerList = newTab.getElementsByClassName("writers")[0];
+        for(const writer of labelData.writers){
+            AddSimpleListItem(writer, writerList);
+        }
+        const artistList = newTab.getElementsByClassName("artists")[0];
+        for(const artist of labelData.artists){
+            AddSimpleListItem(artist, artistList);
+        }
+        const credits = newTab.getElementsByClassName("credits")[0];
+        credits.appendChild(writerList);
+        credits.appendChild(artistList);
     });
 };
+
+/**
+ * 
+ * @param {string} text 
+ * @param {HTMLElement} list 
+ */
+const AddSimpleListItem = function(text, list){
+    const item = document.createElement("li");
+    item.innerHTML = text;
+    list.appendChild(item);
+}

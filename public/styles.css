@@ -125,11 +125,29 @@
         width: 100%;
         margin-left: -.25in;
         padding: 0;
+
+        background-color: rgba(255,255,255,0.6);
     }
 
     .years span {
         font-weight: bold;
         /* color: red; */
         /* font-size: 10pt; */
+    }
+
+    .credits {
+        /* position: absolute;
+        bottom: 0; */
+    }
+
+    .credits ul{
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+    }
+    .credits ul li {
+        font-size: 6pt;
+        line-height: 6pt;
+        padding: 1px;
     }
 }
