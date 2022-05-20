@@ -66,13 +66,25 @@ const OnLoadData = function (labelsSet) {
             yearsEl.parentElement.removeChild(yearsEl);
         }
 
+        /** @type {HTMLElement} */
         const writerList = newTab.getElementsByClassName("writers")[0];
-        for(const writer of labelData.writers){
-            AddSimpleListItem(writer, writerList);
+        if(labelData.writers.length > 0){
+            for(const writer of labelData.writers){
+                AddSimpleListItem(writer, writerList);
+            }
         }
+        else {
+            writerList.style.display = "none";
+        }
+        /** @type {HTMLElement} */
         const artistList = newTab.getElementsByClassName("artists")[0];
-        for(const artist of labelData.artists){
-            AddSimpleListItem(artist, artistList);
+        if(labelData.artists.length > 0){
+            for(const artist of labelData.artists){
+                AddSimpleListItem(artist, artistList);
+            }
+        }
+        else {
+            artistList.style.display = "none";
         }
         const credits = newTab.getElementsByClassName("credits")[0];
         credits.appendChild(writerList);
