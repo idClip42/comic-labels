@@ -1,0 +1,134 @@
+@media screen, print {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Abadi MT Condensed Light";
+    }
+
+    #tabs-column {
+        width: 1.5in;
+        float: right;
+    }
+
+    .tab-label {
+        display: block;
+        height: 3.66in;
+
+        /* border-style: solid none solid none; */
+        /* border-width: 1px; */
+        box-sizing: border-box;
+        /* border-color: gainsboro; */
+
+        text-align: center;
+        /* padding: 0 .25in 0 .25in; */
+        /* padding-x: .25in; */
+        padding: .25in;
+        position: relative;
+
+        /* background-blend-mode: overlay; */
+        /* background-size: cover;
+    background-position: center; */
+        /* overflow: hidden; */
+        /* overflow-x: visible hidden; */
+        /* overflow-y: hidden; */
+        /* overflow-x: visible; */
+    }
+
+    .background-img {
+        opacity: 25%;
+        position: absolute;
+        /* height: 3.667in; */
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1000;
+        /* -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, 
+        from(rgba(0,0,0,1)), to(rgba(0,0,0,0))); */
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), transparent);
+
+    }
+
+    .cover {
+        width: 1in;
+        border-style: solid;
+        border-width: 2px;
+        /* box-shadow: 0px 2px 5px black; */
+        /* margin: 0.25in; */
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-top: .25in; */
+        /* box-sizing: border-box; */
+        /* opacity: 10%; */
+
+        /* position: relative; */
+        top: .25in;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    p,
+    li {
+        padding: 3px;
+        margin: 0;
+    }
+
+    li {
+        font-weight: bold;
+        font-size: 16pt;
+    }
+
+    .run-name {
+        /* font-weight: bold; */
+        /* text-decoration: underline; */
+        font-size: 18pt;
+        font-family: "Abadi MT Condensed Extra Bold";
+        margin-top: 10px;
+    }
+
+    .issues li {
+        /* padding-left: 6px; */
+    }
+
+    .run-info {
+        /* text-align: left; */
+        padding: 0;
+        margin: 0;
+        /* background-color: lightblue; */
+        /* border-style: solid;
+    border-width: 2px;
+    border-color: lightblue;
+    box-sizing: border-box; */
+    }
+
+    .issues span {}
+
+    .issues .label {
+        /* font-style: italic; */
+        font-size: 8pt;
+    }
+
+    .years {
+        position: absolute;
+        /* bottom: 10px; */
+        bottom: .25in;
+        /* text-align: center; */
+        display: block;
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+        width: 100%;
+        margin-left: -.25in;
+        padding: 0;
+    }
+
+    .years span {
+        font-weight: bold;
+        /* color: red; */
+        /* font-size: 10pt; */
+    }
+}

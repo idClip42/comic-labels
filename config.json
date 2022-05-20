@@ -1,0 +1,21 @@
+{
+    "volumeUrls" : [
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_2",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_3",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_4",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_5",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_6",
+        "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1",
+        "https://marvel.fandom.com/wiki/FF_Vol_1",
+        "https://marvel.fandom.com/wiki/Ultimate_Fantastic_Four_Vol_1",
+        "https://marvel.fandom.com/wiki/New_Mutants_Vol_1",
+        "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1",
+        "https://marvel.fandom.com/wiki/Excalibur_Vol_1",
+        "https://marvel.fandom.com/wiki/Further_Adventures_of_Indiana_Jones_Vol_1"
+    ],
+    "getIndivPageData" : false,
+    "galleryItemClass" : "wikia-gallery-item",
+    "labelInterval" : 10,
+    "port" : 3000
+}
