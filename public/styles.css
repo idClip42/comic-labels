@@ -1,177 +1,181 @@
-/* @page{
+@page {
     size: letter;
-    size: 8.5in 11in
-} */
+    /* size: 8.5in 11in */
+}
 
-@media screen, print {
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Abadi MT Condensed Light";
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Abadi MT Condensed Light";
+}
 
-    #tabs-column {
-        width: 1.5in;
-        float: right;
-    }
+#tabs-column {
+    width: 1.5in;
+    float: right;
+}
 
-    .tab-label {
-        display: block;
-        /* This is, for some reason, the best height for keeping them even */
-        height: 3.66325in;
-        /* height: calc(11in/3); */
+.tab-label {
+    display: block;
 
-        /* border-style: solid none solid none; */
-        /* border-width: 1px; */
-        box-sizing: border-box;
-        /* border-color: gainsboro; */
+    /* border-style: solid none solid none; */
+    /* border-width: 1px; */
+    box-sizing: border-box;
+    /* border-color: gainsboro; */
 
-        text-align: center;
-        /* padding: 0 .25in 0 .25in; */
-        /* padding-x: .25in; */
-        padding: .25in;
-        position: relative;
+    /* This value is for Saving to PDF */
+    height: calc(11in/3);
+    /* This value if for Printing a Page */
+    /* This is, for some reason, the best height for keeping them even when printing pages */
+    /* height: 3.66325in; */
 
-        /* background-blend-mode: overlay; */
-        /* background-size: cover;
+    text-align: center;
+    /* padding: 0 .25in 0 .25in; */
+    /* padding-x: .25in; */
+    padding: .25in;
+    position: relative;
+
+    /* background-blend-mode: overlay; */
+    /* background-size: cover;
     background-position: center; */
-        /* overflow: hidden; */
-        /* overflow-x: visible hidden; */
-        /* overflow-y: hidden; */
-        /* overflow-x: visible; */
-    }
+    /* overflow: hidden; */
+    /* overflow-x: visible hidden; */
+    /* overflow-y: hidden; */
+    /* overflow-x: visible; */
+}
 
-    .background-img {
-        opacity: 25%;
-        position: absolute;
-        /* height: 3.667in; */
-        height: 100%;
-        top: 0;
-        right: 0;
-        z-index: -1000;
-        /* -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, 
+.background-img {
+    opacity: 25%;
+    position: absolute;
+    /* height: 3.667in; */
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1000;
+    /* -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, 
         from(rgba(0,0,0,1)), to(rgba(0,0,0,0))); */
-        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), transparent);
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), transparent);
 
-    }
+}
 
-    .cover {
-        width: 1in;
-        border-style: solid;
-        border-width: 2px;
-        /* box-shadow: 0px 2px 5px black; */
-        /* margin: 0.25in; */
+.cover {
+    width: 1in;
+    border-style: solid;
+    border-width: 2px;
+    /* box-shadow: 0px 2px 5px black; */
+    /* margin: 0.25in; */
 
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        /* margin-top: .25in; */
-        /* box-sizing: border-box; */
-        /* opacity: 10%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: .25in; */
+    /* box-sizing: border-box; */
+    /* opacity: 10%; */
 
-        /* position: relative; */
-        top: .25in;
-    }
+    /* position: relative; */
+    top: .25in;
+}
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-    p,
-    li {
-        padding: 3px;
-        margin: 0;
-    }
+p,
+li {
+    padding: 3px;
+    margin: 0;
+}
 
-    li {
-        font-weight: bold;
-        font-size: 16pt;
-    }
+li {
+    font-weight: bold;
+    font-size: 16pt;
+}
 
-    .run-name {
-        /* font-weight: bold; */
-        /* text-decoration: underline; */
-        font-size: 18pt;
-        font-family: "Abadi MT Condensed Extra Bold";
-        margin-top: 10px;
-        line-height: 14pt;
-    }
+.run-name {
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+    font-size: 18pt;
+    font-family: "Abadi MT Condensed Extra Bold";
+    margin-top: 10px;
+    line-height: 14pt;
+}
 
-    .issues li {
-        /* padding-left: 6px; */
-    }
+.issues li {
+    /* padding-left: 6px; */
+}
 
-    .run-info {
-        /* text-align: left; */
-        padding: 0;
-        margin: 0;
-        /* background-color: lightblue; */
-        /* border-style: solid;
+.run-info {
+    /* text-align: left; */
+    padding: 0;
+    margin: 0;
+    /* background-color: lightblue; */
+    /* border-style: solid;
     border-width: 2px;
     border-color: lightblue;
     box-sizing: border-box; */
-    }
+}
 
-    .issues span {}
+.issues span {}
 
-    .issues .label {
-        /* font-style: italic; */
-        font-size: 8pt;
-    }
+.issues .label {
+    /* font-style: italic; */
+    font-size: 8pt;
+}
 
-    .years {
-        position: absolute;
-        /* bottom: 10px; */
-        bottom: .25in;
-        /* text-align: center; */
-        display: block;
-        /* margin-left: auto; */
-        /* margin-right: auto; */
-        width: 100%;
-        margin-left: -.25in;
-        padding: 0;
+.years {
+    position: absolute;
+    /* bottom: 10px; */
+    bottom: .25in;
+    /* text-align: center; */
+    display: block;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    width: 100%;
+    margin-left: -.25in;
+    padding: 0;
 
-        /* background-color: rgba(255,255,255,0.6); */
-    }
+    /* background-color: rgba(255,255,255,0.6); */
+}
 
-    .years span {
-        font-weight: bold;
-        /* color: red; */
-        /* font-size: 10pt; */
-    }
+.years span {
+    font-weight: bold;
+    /* color: red; */
+    /* font-size: 10pt; */
+}
 
-    .credits {
-        position: absolute;
-        top: 0;
-        padding: 0.25in;
-        margin-left: -40%;
-        height: 3.66in;
-        overflow-y: hidden;
-        box-sizing: border-box;
-    }
+.credits {
+    position: absolute;
+    top: 0;
+    padding: 0.25in;
+    margin-left: -40%;
+    height: 3.66in;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
 
-    .credits ul{
-        display: block;
-        width: 40%;
-        margin-bottom: 0.05in;
-    }
-    .credits ul li {
-        font-size: 6pt;
-        line-height: 6pt;
-        padding: 1px;
-        text-align: left;
-    }
+.credits ul {
+    display: block;
+    width: 40%;
+    margin-bottom: 0.05in;
+}
 
-    .credits ul::before{
-        font-size: 8pt;
-        text-decoration: underline;
-    }
-    .writers::before{
-        content:"Writers"
-    }
-    .artists::before{
-        content:"Artists"
-    }
+.credits ul li {
+    font-size: 6pt;
+    line-height: 6pt;
+    padding: 1px;
+    text-align: left;
+}
+
+.credits ul::before {
+    font-size: 8pt;
+    text-decoration: underline;
+}
+
+.writers::before {
+    content: "Writers"
+}
+
+.artists::before {
+    content: "Artists"
 }
