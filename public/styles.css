@@ -1,3 +1,8 @@
+/* @page{
+    size: letter;
+    size: 8.5in 11in
+} */
+
 @media screen, print {
     body {
         margin: 0;
@@ -12,7 +17,9 @@
 
     .tab-label {
         display: block;
-        height: 3.66in;
+        /* This is, for some reason, the best height for keeping them even */
+        height: 3.66325in;
+        /* height: calc(11in/3); */
 
         /* border-style: solid none solid none; */
         /* border-width: 1px; */
