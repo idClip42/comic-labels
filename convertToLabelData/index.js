@@ -34,7 +34,8 @@ const HandleComicRun = function(comicRun){
     /** @type {Label} */
     let currentLabel = null;
 
-    for(let issue of comicRun.books){
+    for(let i = 0; i < comicRun.books.length; ++i){
+        const issue = comicRun.books[i];
 
         let shouldMakeNewLabel = false;
         // If there is no current label
@@ -47,6 +48,12 @@ const HandleComicRun = function(comicRun){
             // Or if we've jumped past the label interval (like FF vol. 1 jumps from 416 to 500)
             const nextLabelIssue = currentLabel.issues.start + CONFIG.labelInterval;
             shouldMakeNewLabel |= issue.issue > nextLabelIssue;
+
+            // If there are few enough issues left that we want to keep them on the one label
+            // We prevent a new label from happening
+            const remainingIssues = comicRun.books.length - i;
+            if(remainingIssues < CONFIG.minIssuesForLabel)
+                shouldMakeNewLabel = false;
         }
 
         if(shouldMakeNewLabel){

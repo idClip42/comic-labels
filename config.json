@@ -17,5 +17,6 @@
     "getIndivPageData" : false,
     "galleryItemClass" : "wikia-gallery-item",
     "labelInterval" : 10,
-    "port" : 3000
+    "port" : 3000,
+    "minIssuesForLabel": 4
 }
