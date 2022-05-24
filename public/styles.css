@@ -3,12 +3,6 @@
     /* size: 8.5in 11in */
 }
 
-@media print{
-    .hide-on-print{
-        display: none;
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -101,7 +95,7 @@ li {
 .run-name {
     /* font-weight: bold; */
     /* text-decoration: underline; */
-    font-size: 18pt;
+    font-size: 16pt;
     font-family: "Abadi MT Condensed Extra Bold";
     margin-top: 10px;
     line-height: 14pt;
@@ -186,12 +180,33 @@ li {
     content: "Artists"
 }
 
+#top-list{
+    column-count: 3;
+}
+
+#top-list span{
+    margin-left: 10px;
+    font-size: 12pt;
+}
+
 .label-control{
     position: absolute;
-    top: 100px;
+    top: 0;
     left: -200px;
 }
 
 .tab-label.hide-on-print{
+    opacity: 20%;
+    padding: 0;
+    height: auto;
+}
+.tab-label.hide-on-print img,
+.tab-label.hide-on-print p:not(.run-name){
     display: none;
+}
+
+@media print{
+    .hide-on-print{
+        display: none;
+    }
 }
