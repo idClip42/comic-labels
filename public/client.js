@@ -1,5 +1,26 @@
 /** @typedef {import("./../convertToLabelData/types").Label} Label */
 
+const CONFIG = {
+    "HIDE_ON_PRINT_CLASS" : "hide-on-print",
+    "LABEL_CONTROL_CLASS" : "label-control",
+    "TOP_LIST_ID" : "top-list"
+};
+
+/**
+ * 
+ * @param {Label} label 
+ * @param {Element} element 
+ */
+const LabelElement = function(label, element){
+    this.label = label;
+    this.element = element;
+}
+
+/**
+ * @type {Object<string, LabelElement[]>}
+ */
+const labelElements = {};
+
 window.onload = () => {
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", function () {
@@ -93,7 +114,44 @@ const OnLoadData = function (labelsSet) {
         const credits = newTab.getElementsByClassName("credits")[0];
         credits.appendChild(writerList);
         credits.appendChild(artistList);
+
+        const labelElementSetName = `${labelData["run-name"]} (Vol. ${labelData.volume})`;
+        if(!labelElements.hasOwnProperty(labelElementSetName)){
+            labelElements[labelElementSetName] = [];
+        }
+        labelElements[labelElementSetName].push(
+            new LabelElement(
+                labelData,
+                newTab
+            )
+        );
+
+        const labelShowHideControls = document.createElement("div");
+        labelShowHideControls.classList.add(CONFIG.HIDE_ON_PRINT_CLASS);
+        labelShowHideControls.classList.add(CONFIG.LABEL_CONTROL_CLASS);
+        AddShowHideButtons(
+            labelShowHideControls,
+            () => newTab.classList.remove(CONFIG.HIDE_ON_PRINT_CLASS),
+            () => newTab.classList.add(CONFIG.HIDE_ON_PRINT_CLASS)
+        );
+        newTab.appendChild(labelShowHideControls);
     });
+
+    console.log(labelElements);
+    const topList = document.getElementById(CONFIG.TOP_LIST_ID);
+    for(const key in labelElements){
+        const topItem = document.createElement("li");
+        topList.appendChild(topItem);
+        console.log(key);
+        AddShowHideButtons(
+            topItem,
+            () => labelElements[key].forEach(ish => ish.element.classList.remove(CONFIG.HIDE_ON_PRINT_CLASS)),
+            () => labelElements[key].forEach(ish => ish.element.classList.add(CONFIG.HIDE_ON_PRINT_CLASS))
+        );
+        const label = document.createElement("span");
+        label.innerHTML = key;
+        topItem.appendChild(label);
+    }
 };
 
 /**
@@ -106,3 +164,21 @@ const AddSimpleListItem = function (text, list) {
     item.innerHTML = text;
     list.appendChild(item);
 }
+
+/**
+ * 
+ * @param {Element} parent 
+ * @param {Function} showCallback 
+ * @param {Function} hideCallback 
+ */
+const AddShowHideButtons = function(parent, showCallback, hideCallback){
+    const showButton = document.createElement("button");
+    showButton.innerHTML = "SHOW";
+    showButton.onclick = showCallback;
+    parent.appendChild(showButton);
+
+    const hideButton = document.createElement("button");
+    hideButton.innerHTML = "HIDE";
+    hideButton.onclick = hideCallback;
+    parent.appendChild(hideButton);
+};
