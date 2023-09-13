@@ -88,17 +88,32 @@ const CreateBook = async function(domElement, getIndivPageData, comicRun){
     const issueNumText = issueLink.innerHTML.split("#")[1];
     const issue = parseFloat(issueNumText) || issueNumText;
     /** @type {string} */
-    const storyName = spans[3].innerHTML.replace(/\"/g,"");
+    const storyName = spans[3]?.innerHTML.replace(/\"/g,"") || "";
 
     const releaseDate = links.length > 4 ? new Date(links[2].innerHTML) : null;
     /** @type {string} */
-    const coverMonth = links.length > 4 ? links[3].innerHTML : links[2].innerHTML;
-    const coverYear = parseInt(links.length > 4 ? links[4].innerHTML : links[3].innerHTML);
+    // const coverMonth = links.length > 4 ? links[3].innerHTML : links[2].innerHTML;
+    const coverMonth = links[links.length-1].innerHTML
+    // console.log(links.length)
+    const coverYear = parseInt(
+        // links.length > 4 ? 
+        //     links[4].innerHTML : 
+        //     links[3].innerHTML
+        links[links.length-1].innerHTML
+    );
 
-    if(!coverMonth || !coverYear){
-        console.log(this);
-        throw "Problem!";
-    }
+    // if(!coverMonth || !coverYear){
+    //     console.error("ERROR");
+    //     console.error(series);
+    //     console.error(volumeName);
+    //     console.error(issue);
+    //     console.error(storyName);
+    //     console.error(issueLink);
+    //     console.error(releaseDate);
+    //     console.error(Array.from(links).map(lnk=>lnk.innerHTML));
+    //     console.error(this);
+    //     throw "Problem!";
+    // }
 
     /** @type {string} */
     let coverImg = images[0].src;
