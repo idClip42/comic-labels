@@ -81,7 +81,9 @@
         "https://marvel.fandom.com/wiki/Uncanny_Avengers_Vol_4",
         "https://marvel.fandom.com/wiki/Jean_Grey_Vol_2",
         "https://marvel.fandom.com/wiki/Realm_of_X_Vol_1",
-        "https://marvel.fandom.com/wiki/Ms._Marvel:_The_New_Mutant_Vol_1"
+        "https://marvel.fandom.com/wiki/Ms._Marvel:_The_New_Mutant_Vol_1",
+        "https://marvel.fandom.com/wiki/X-Men_Vol_1",
+        "https://marvel.fandom.com/wiki/Uncanny_X-Men_Vol_1"
     ],
     "getIndivPageData" : false,
     "galleryItemClass" : "wikia-gallery-item",
